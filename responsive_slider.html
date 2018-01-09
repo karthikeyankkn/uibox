@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .slider-container1, .slider-container2{
+      position: relative;
+    }
+    .slider-parent{
+      list-style: none;
+      overflow-x: scroll;
+      display: flex;
+      padding: 0;
+      transition: 1s ease;
+    }
+    .slider-parent li{
+      list-style: none;
+      min-width: 365px;
+      display: -webkit-inline-box;
+      margin:0 15px 0 0;
+      position: relative;
+      transition: 1s ease;
+    }
+    .list-card{
+      border: 1px solid #888;
+    }
+    .list-card img{
+      width: 100%;
+    }
+    .list-card article{
+      padding: 10px;
+    }
+    .list-cart article span{
+      padding: 5px 10px;
+      display: block;
+    }
+    .list-card article a{
+      text-align: center;
+      display: block;
+      width: 100px;
+      margin:10px auto;
+    }
+    ::-webkit-scrollbar { 
+    display: none; 
+    }
+    .left_go1, .left_go2{
+      /*position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0px;*/
+      padding: 5px;
+      position: absolute;
+      top: 50%;
+      left: -2%;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+    }
+    .right_go1, .right_go2{
+      /*position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0px;*/
+      padding: 5px;
+      position: absolute;
+      top: 50%;
+      right: -2%;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+    }
+    @media only screen and (max-width: 500px) {
+         .slider-parent li {
+            min-width: 250px;
+        }
+    }
+  </style>
+</head>
+<body>
+ <section>
+    <div class="container slider-container1" style="margin-top: 30px;">
+      <ul class="slider-parent" id="slider1">
+        <li>
+          <div class="list-card">
+            <img src="https://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg">
+            <article>
+              <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+              <span class="label label-danger">Danger Label, Avadi</span>
+              <a href="#" class="btn btn-primary">See more</a>
+            </article>
+          </div>
+        </li>
+        <li>
+          <div class="list-card">
+            <img src="https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg">
+            <article>
+              <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+              <span class="label label-danger">Danger Label, Avadi</span>
+              <a href="#" class="btn btn-primary">See more 1</a>
+            </article>
+          </div>
+        </li>
+        <li>
+          <div class="list-card">
+            <img src="http://www.gettyimages.com/gi-resources/images/Embed/new/embed2.jpg">
+            <article>
+              <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+              <span class="label label-danger">Danger Label, Avadi</span>
+              <a href="#" class="btn btn-primary">See more 2</a>
+            </article>
+          </div>
+        </li>
+        <li>
+          <div class="list-card">
+            <img src="https://cdn.pixabay.com/photo/2017/01/06/23/21/soap-bubble-1959327_960_720.jpg">
+            <article>
+              <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+              <span class="label label-danger">Danger Label, Avadi</span>
+              <a href="#" class="btn btn-primary">See more 3</a>
+            </article>
+          </div>
+        </li>
+        <li>
+          <div class="list-card">
+            <img src="https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg">
+            <article>
+              <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+              <span class="label label-danger">Danger Label, Avadi</span>
+              <a href="#" class="btn btn-primary">See more 4</a>
+            </article>
+          </div>
+        </li>
+        <li>
+          <div class="list-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPmmb5grJ4bSLwTQGN1PF65a8eTRwjBd79q7aRym1TTSvOQwej">
+            <article>
+              <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+              <span class="label label-danger">Danger Label, Avadi</span>
+              <a href="#" class="btn btn-primary">See more 5</a>
+            </article>
+          </div>
+        </li>
+        <li>
+          <div class="list-card">
+            <img src="https://static.pexels.com/photos/158607/cairn-fog-mystical-background-158607.jpeg">
+            <article>
+              <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+              <span class="label label-danger">Danger Label, Avadi</span>
+              <a href="#" class="btn btn-primary">See more 6</a>
+            </article>
+          </div>
+        </li>
+      </ul>
+      <button class="left_go1 hidden-xs glyphicon glyphicon-menu-left" id="left_go"></button>
+      <button class="right_go1 hidden-xs glyphicon glyphicon-menu-right" id="right_go"></button>
+    </div>
+    <script> 
+      $(document).ready(function(){
+          $("#left_go").click(function(){
+           // var pos = $('.slider-parent').scrollRight() + 260;
+           //  $('.slider-parent').scrollRight(pos);
+            var pos = $('#slider1').scrollLeft() - 375;
+            $('#slider1').animate({scrollLeft: pos}, 300);
+          });
+          $("#right_go").click(function(){
+            // debugger
+            var pos = $('#slider1').scrollLeft() + 375;
+            $('#slider1').animate({scrollLeft: pos}, 300);
+            
+          });
+      });
+    </script> 
+  </section>
+
+
+  <section>
+    <div class="container slider-container2" style="margin-top: 30px;">
+    <ul class="slider-parent" id="slider2">
+      <li>
+        <div class="list-card">
+          <img src="https://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg">
+          <article>
+            <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+            <span class="label label-danger">Danger Label, Avadi</span>
+            <a href="#" class="btn btn-primary">See more</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="list-card">
+          <img src="https://static.pexels.com/photos/248797/pexels-photo-248797.jpeg">
+          <article>
+            <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+            <span class="label label-danger">Danger Label, Avadi</span>
+            <a href="#" class="btn btn-primary">See more 1</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="list-card">
+          <img src="http://www.gettyimages.com/gi-resources/images/Embed/new/embed2.jpg">
+          <article>
+            <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+            <span class="label label-danger">Danger Label, Avadi</span>
+            <a href="#" class="btn btn-primary">See more 2</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="list-card">
+          <img src="https://cdn.pixabay.com/photo/2017/01/06/23/21/soap-bubble-1959327_960_720.jpg">
+          <article>
+            <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+            <span class="label label-danger">Danger Label, Avadi</span>
+            <a href="#" class="btn btn-primary">See more 3</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="list-card">
+          <img src="https://wallpaperbrowse.com/media/images/3848765-wallpaper-images-download.jpg">
+          <article>
+            <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+            <span class="label label-danger">Danger Label, Avadi</span>
+            <a href="#" class="btn btn-primary">See more 4</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="list-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPmmb5grJ4bSLwTQGN1PF65a8eTRwjBd79q7aRym1TTSvOQwej">
+          <article>
+            <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+            <span class="label label-danger">Danger Label, Avadi</span>
+            <a href="#" class="btn btn-primary">See more 5</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="list-card">
+          <img src="https://static.pexels.com/photos/158607/cairn-fog-mystical-background-158607.jpeg">
+          <article>
+            <p>loream ipusim is a paragraph for all the sample texts.  Its very interesting.. :)</p>
+            <span class="label label-danger">Danger Label, Avadi</span>
+            <a href="#" class="btn btn-primary">See more 6</a>
+          </article>
+        </div>
+      </li>
+    </ul>
+    <button class="left_go2 hidden-xs glyphicon glyphicon-menu-left" id="left_go2"></button>
+    <button class="right_go2 hidden-xs glyphicon glyphicon-menu-right" id="right_go2"></button>
+  </div>
+  <script> 
+    $(document).ready(function(){
+        $("#left_go2").click(function(){
+         // var pos = $('.slider-parent').scrollRight() + 260;
+         //  $('.slider-parent').scrollRight(pos);
+          var pos = $('#slider2').scrollLeft() - 375;
+          $('#slider2').animate({scrollLeft: pos}, 300);
+        });
+        $("#right_go2").click(function(){
+          // debugger
+          var pos = $('#slider2').scrollLeft() + 375;
+          $('#slider2').animate({scrollLeft: pos}, 300);
+        });
+    });
+  </script> 
+  </section>
+</body>
+</html>

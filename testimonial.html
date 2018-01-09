@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>testimonial</title>
+  <meta charset="utf-8">
+  <style>
+    /*testimonial style*/
+    ul,li{
+      padding:0;
+      margin: 0;
+      list-style: none;
+    }
+    .testimonial-container{
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .testimonial-container ul{
+
+    }
+    .testimonial-container ul li{
+      display: none;
+    }
+    .testimonial-container ul li:first-child{
+      display: block;
+    }
+    .testimonial-container ul li img{
+      display: block;
+      width: 100%;
+      margin: auto;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+    .testimonial-container ul li label{
+      color: #888;
+      padding-top: 20px;
+      display: block;
+    }
+    .testimonial-container ul li p{
+      text-align: justify;
+      padding: 0 10%;
+    }
+    .testimonial-container span{
+      text-align: center;
+      display: block;
+    }
+    .testimonial-container span strong{
+      background: #4caf507d;
+      height: 10px;
+      width: 20px;
+      border-radius: 25px;
+      display: inline-block;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .testimonial-container span strong:hover{
+      width: 30px;
+      background: #4CAF50;
+    }
+    .active_testimonial{
+      width: 30px !important;
+      background: #4CAF50 !important;
+    }
+  </style>
+</head>
+<body>
+<!-- code for testimonial-->
+<div class="testimonial-container">
+  <ul>
+    <li>
+      <img src="http://cdn1.theweek.co.uk/sites/theweek/files/styles/1x1_100/public/steve-jobs.jpg?itok=IYGAI9sV" alt="testimonial_img" />
+      <label>Name of the person 1</label>
+      <p>loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum</p>
+    </li>
+    <li>
+      <img src="http://cdn1.theweek.co.uk/sites/theweek/files/styles/1x1_100/public/steve-jobs.jpg?itok=IYGAI9sV" alt="testimonial_img" />
+      <label>Name of the person 2</label>
+      <p>loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum</p>
+    </li>
+    <li>
+      <img src="http://cdn1.theweek.co.uk/sites/theweek/files/styles/1x1_100/public/steve-jobs.jpg?itok=IYGAI9sV" alt="testimonial_img" />
+      <label>Name of the person 3</label>
+      <p>loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum</p>
+    </li>
+    <li>
+      <img src="http://cdn1.theweek.co.uk/sites/theweek/files/styles/1x1_100/public/steve-jobs.jpg?itok=IYGAI9sV" alt="testimonial_img" />
+      <label>Name of the person 4</label>
+      <p>loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum</p>
+    </li>
+    <li>
+      <img src="http://cdn1.theweek.co.uk/sites/theweek/files/styles/1x1_100/public/steve-jobs.jpg?itok=IYGAI9sV" alt="testimonial_img" />
+      <label>Name of the person 5</label>
+      <p>loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusumloriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum loriem ipusum ipusum</p>
+    </li>
+  </ul>
+  <span></span>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // script for testimonial
+    
+    var count = 0;
+    // just a bit of caching:
+    setInterval(function() {
+      $(".testimonial-container ul li").eq(count++).next("li").fadeIn();
+      $(".testimonial-container ul li").eq(count).siblings("li").hide();
+      $("#"+count+"").addClass("active_testimonial");
+      $("#"+count+"").siblings().removeClass("active_testimonial");
+
+      if (count == len_of_li) {
+        count = 0;
+        $(".testimonial-container ul li").eq(count).fadeIn();
+        $(".testimonial-container ul li").eq(count).siblings("li").hide();
+        $("#"+count+"").addClass("active_testimonial");
+        $("#"+count+"").siblings().removeClass("active_testimonial");
+      }
+
+    }, 5000);
+
+    var len_of_li = $(".testimonial-container").children("ul").children().length;
+    for (var i = 0; i < len_of_li; i++) {
+      $(".testimonial-container span").append("<strong id="+i+"></strong>");
+      if (i == 0) {
+        $("#"+0+"").addClass("active_testimonial");
+      }
+    }
+
+    $("strong").click(function(){
+      debugger
+      $(this).addClass("active_testimonial");
+      $(this).siblings().removeClass("active_testimonial");
+      var sid = $(this);
+      var show_count = sid[0].id;
+      $(".testimonial-container ul li").eq(show_count).fadeIn();
+      $(".testimonial-container ul li").eq(show_count).siblings("li").hide();
+    });
+
+  });
+  
+</script>
+</body>
+</html>

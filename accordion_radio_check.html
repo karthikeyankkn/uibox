@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Radio_check</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    ul{
+      list-style: none;
+    }
+    .type-of-kitchen-container li span{
+      display: none;
+    }
+    @media only screen and (max-width: 500px) {
+        
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul class="type-of-kitchen-container">
+      <li>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 1</label>
+          <span>
+            <h4>first box</h4>
+          </span>
+        </div>
+      </li>
+      <li>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 2</label>
+          <span>
+            <h4>second box</h4>
+          </span>
+        </div>
+        
+      </li>
+      <li>
+        <div class="radio">
+          <label><input type="radio" name="optradio">Option 3</label>
+          <span>
+            <h4>third box</h4>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script>
+    $(document).ready(function(){
+      $('input[type="radio"]').click(function(){
+        debugger
+        $(this).parent("label").siblings().show();
+        $(this).parents("li").siblings().find("span").hide();
+      });
+    });
+  </script>
+</body>
+</html>

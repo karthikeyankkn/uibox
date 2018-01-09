@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>toggle-page</title>
+  <style>
+    /*toggle_page style*/
+    .toggle-page-container ul li{
+      display: none;
+    }
+    .toggle-page-container ul li:first-child{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<!-- code for toggle_page-->
+<div class="toggle-page-container">
+  <ul>
+    <li>
+      <h4>content 1</h4>
+      <button class="back">Back</button>
+      <button class="next">Next</button>
+    </li>
+    <li>
+      <h4>content 2</h4>
+      <button class="back">Back</button>
+      <button class="next">Next</button>
+    </li>
+    <li>
+      <h4>content 3</h4>
+      <button class="back">Back</button>
+      <button class="next">Next</button>
+    </li>
+    <li>
+      <h4>content 4</h4>
+      <button class="back">Back</button>
+      <button class="next">Next</button>
+    </li>
+    <li>
+      <h4>content 5</h4>
+      <button class="back">Back</button>
+      <button class="next">Next</button>
+    </li>
+    <li>
+      <h4>content 6</h4>
+      <button class="back">Back</button>
+      <button class="next">Next</button>
+    </li>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // script for toggle page
+
+    $('.next').click(function(){
+      $(this).parent().hide();
+      $(this).parent().next().fadeIn();
+      var lastindex = $(this).parent().siblings();
+      var index = $(this).parent().index();
+      if(index == lastindex.length){  
+        $(this).prop({disabled: true});
+        $(this).parent().fadeIn();
+       }
+    });
+    
+    $('.back').click(function(){
+      $(this).parent().hide();
+      $(this).parent().prev().fadeIn();
+      var index = $(this).parent().index();
+      if(index == 0){  
+        $(this).prop({disabled: true});
+        $(this).parent().fadeIn();
+       }
+    });
+  });
+  
+</script>
+</body>
+</html>
